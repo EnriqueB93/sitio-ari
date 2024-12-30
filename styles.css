@@ -134,6 +134,33 @@ ul {
   background-color: var(--color-secundario);
 }
 
+.arrows-container {
+  width: 100%;
+  z-index: 3;
+}
+.arrows {
+  font-size: xx-large;
+  font-size: 42px;
+  position: absolute;
+  top: 50%;
+  opacity: 0.2;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+
+}
+.arrows:hover {
+  opacity: 0.5;
+}
+
+#back{
+  left: 10px;
+}
+
+#next{
+  right: 10px;
+}
+
 /* Servicios */
 
 .title {
@@ -147,13 +174,8 @@ ul {
   background-color: var(--color-fondo-suave);
   height: 90vh;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-
-.servicos-container {
-  display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
 }
 
@@ -166,14 +188,20 @@ ul {
   background-color: var(--color-fondo);
   color: var(--color-texto);
   border-radius: 5px;
-  width: 100%;
-  padding: 8px;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.servico:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .icon-serviços {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10px;
 }
 
 #fondo-icon {
@@ -250,7 +278,6 @@ h3 {
 
 /* Galería */
 .galery-container {
-  
   width: 100%;
   max-width: 1400px;
   display: flex;
