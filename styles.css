@@ -103,6 +103,7 @@ ul {
 .content {
   max-width: 535px;
   padding: 30px;
+  animation: slider 1s ease-in-out forwards;
 }
 
 .description-banner {
@@ -147,18 +148,29 @@ ul {
   cursor: pointer;
   border: none;
   background-color: transparent;
-
 }
 .arrows:hover {
   opacity: 0.5;
 }
 
-#back{
+#back {
   left: 10px;
 }
 
-#next{
+#next {
   right: 10px;
+}
+
+.logo-whatsapp {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  z-index: 5;
+}
+
+.logo-whatsapp img {
+  width: 60px;
+  opacity: 0.8;
 }
 
 /* Servicios */
@@ -247,6 +259,7 @@ ul {
   align-items: center;
   flex: 1 1 300px;
   max-width: 500px;
+  z-index: 2;
 }
 
 .description {
@@ -259,6 +272,7 @@ ul {
   padding: 20px;
   line-height: 2em;
   border-radius: 10px;
+  z-index: 2;
 }
 
 h3 {
@@ -274,6 +288,12 @@ h3 {
 .link-sobre:hover {
   transform: scale(1.02);
   color: var(--color-principal);
+}
+
+
+.img-section{
+  width: 70%;
+  position: absolute;
 }
 
 /* Galería */
@@ -416,4 +436,54 @@ textarea {
 
 .logo-redes-sociales {
   height: 30px;
+}
+
+/* Animaciones */
+
+.title-banner,
+.description-banner,
+.banner-bnt {
+  transform: translateY(50px);
+  opacity: 0;
+  filter: blur(20px);
+  animation: efectContentBanner 0.5s 1s linear 1 forwards;
+}
+
+@keyframes efectContentBanner {
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.item {
+  opacity: 0;
+  transform: translateY(50%);
+  animation: efectItemBanner .6s 1.1s linear 1 forwards;
+}
+
+@keyframes efectItemBanner {
+  0% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+.fondo-banner{
+  animation: efectFundoBanner 1s ease-out alternate ;
+}
+
+@keyframes efectFundoBanner {
+  0% {
+  transform: translateX(-100%);
+  }
+
+  
+  100% {
+     transform: translateX(0);  }
 }
