@@ -19,3 +19,5 @@ btnBack.onclick = () => {
 	active = active <= 0 ? currentBanner - 1 : active - 1;
 	banners[active].classList.add("active");
 };
+
+

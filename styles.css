@@ -13,6 +13,10 @@
   --color-fondo-suave: #f8f0ec;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   width: 100vw;
   height: 100vh;
@@ -155,10 +159,12 @@ ul {
 
 #back {
   left: 10px;
+  z-index: 3;
 }
 
 #next {
   right: 10px;
+  z-index: 3;
 }
 
 .logo-whatsapp {
@@ -169,8 +175,7 @@ ul {
 }
 
 .logo-whatsapp img {
-  width: 60px;
-  opacity: 0.8;
+  width: 30px;
 }
 
 /* Servicios */
@@ -290,8 +295,7 @@ h3 {
   color: var(--color-principal);
 }
 
-
-.img-section{
+.img-section {
   width: 70%;
   position: absolute;
 }
@@ -339,7 +343,7 @@ h3 {
 /* contato */
 
 .contacto-container {
-  height: 60vh;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -348,10 +352,12 @@ h3 {
 }
 
 .form {
-  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 300px;
   display: flex;
-  gap: 40px;
+  gap: 20px;
   padding: 40px;
   background-color: var(--color-fondo-suave);
   align-items: center;
@@ -359,6 +365,7 @@ h3 {
   max-width: 800px;
 }
 .inputs-form {
+  width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -387,7 +394,7 @@ textarea,
 }
 
 .textarea-form {
-  width: 100%;
+  width: 50%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -405,14 +412,7 @@ textarea {
   border-radius: 10px;
 }
 
-.contacto-info {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  line-height: 2em;
-  padding: 30px;
-}
+
 /* Footer */
 
 .footer {
@@ -429,6 +429,21 @@ textarea {
   padding: 10px 30px;
 }
 
+.contacto-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 2em;
+  padding: 30px;
+}
+
+.contacto-info h3 {
+  color: var(--color-fondo-suave);
+}
+
+.contacto-info p {
+  color: var(--color-texto);
+}
+
 .social-media {
   display: flex;
   gap: 20px;
@@ -436,6 +451,12 @@ textarea {
 
 .logo-redes-sociales {
   height: 30px;
+}
+.text-footer {
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+  border-top: 2px solid var(--color-fondo-suave);
 }
 
 /* Animaciones */
@@ -460,7 +481,7 @@ textarea {
 .item {
   opacity: 0;
   transform: translateY(50%);
-  animation: efectItemBanner .6s 1.1s linear 1 forwards;
+  animation: efectItemBanner 0.6s 1.1s linear 1 forwards;
 }
 
 @keyframes efectItemBanner {
@@ -473,17 +494,31 @@ textarea {
   }
 }
 
-
-.fondo-banner{
-  animation: efectFundoBanner 1s ease-out alternate ;
+.fondo-banner {
+  animation: efectFundoBanner 1s ease-out alternate;
 }
 
 @keyframes efectFundoBanner {
   0% {
-  transform: translateX(-100%);
+    transform: translateX(-100%);
   }
 
-  
   100% {
-     transform: translateX(0);  }
+    transform: translateX(0);
+  }
+}
+
+/** Media Queries */
+
+@media (max-width: 576px) {
+  .link {
+    display: none;
+  }
+
+  .item {
+    display: none;
+  }
+
+  .contacto-info {
+flex-wrap: wrap;  }
 }
